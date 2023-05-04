@@ -1,0 +1,5 @@
+{
+    "keyPrivateToken"       : "key_token",
+    "keyPrivateSignature"   : "key_signature",
+    "hash"                  : "HS256"
+}

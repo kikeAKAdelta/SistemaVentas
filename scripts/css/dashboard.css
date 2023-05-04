@@ -1,0 +1,66 @@
+/* apply a natural box layout model to all elements, but allowing components to change */
+html {
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+
+/** ROOT **/
+:root{
+    --gris-suave: #EDEDED;
+    --blanco: #fff;
+    --negro: #000;
+    --aqua: #26DB97;
+    --azul: #2699DB;
+    --cafe: #B5500F;
+    --celeste: #0D99C2;
+}
+
+/** GENERAL **/
+body{
+    background-color: var(--gris-suave);
+}
+
+/** UTILIDADES **/
+.bg-celeste{
+    background-color: var(--celeste);
+}
+
+/** HEADER **/
+.header_menu{
+    background-color: var(--aqua);
+    color: var(--blanco);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.car-principal{
+    margin: 10px 0px;
+    height: 90vh;
+}
+
+.car-principal-items{
+    background-color: var(--blanco);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.car-principal-items:hover{
+    box-shadow: rgba(0, 0, 0, 0.50) 0px 5px 15px;
+    cursor: pointer;
+}
+
+.icon-clientes{
+    color: var(--azul);
+}
+
+.icon-proveedor{
+    color: var(--cafe);
+}
+
+.icon-usuarios{
+    color: #727C8C;
+}
+
+
+
