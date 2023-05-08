@@ -98,7 +98,6 @@ var eliminarCategoria = async (idCategoria) =>{
     alert(mensaje);
     listarCategorias();
 
-
 }
 
 /**
@@ -258,6 +257,7 @@ var vistaEditarCategoria = async (idCategoria) =>{
     crearModal("modal1");
 
     document.getElementById("modal-content").innerHTML = contenido;
+    document.getElementById("modal-titulo").innerHTML  = "Editar Categoria";
     
     setTimeout(function(){
         document.getElementById("txtCategoria").focus();
@@ -323,7 +323,9 @@ var editarCategoria = async (idCategoria) =>{
     }
 }
 
-
+/**
+ * Funcion encargada de regresar al menu principal
+ */
 var regresarMenu = () =>{
     window.location.href = "http://localhost/SistemaVentas/view/dashboard/dashboard.php";
 }

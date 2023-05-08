@@ -8,6 +8,8 @@ var redirectView = (view) =>{
 
         if(view == 'categorias'){
             window.location.href = 'http://localhost/SistemaVentas/view/categorias/categorias.php';
+        }else if(view == 'usuarios'){
+            window.location.href = 'http://localhost/SistemaVentas/view/usuarios/usuarios.php';
         }
     }
 

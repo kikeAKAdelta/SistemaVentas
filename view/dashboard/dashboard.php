@@ -87,7 +87,7 @@ date_default_timezone_set('America/Mexico_City');
                                 </div>
 
                                 <!-- Usuarios -->
-                                <div class="col-sm-3 mb-3">
+                                <div class="col-sm-3 mb-3" onclick="redirectView('usuarios'); return false;">
                                     <div class="card car-principal-items">
                                         <div class="card-header fw-bold text-center">
                                             Usuarios

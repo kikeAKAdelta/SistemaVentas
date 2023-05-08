@@ -14,16 +14,16 @@ class Categoria{
         $conexion    = $objConexion->conexion();
 
         $sql = "SELECT 
-                        ID_CATEGORIA
-                    ,	ID_USUARIO
-                    ,   ( SELECT USUARIO FROM USUARIOS WHERE ID_USUARIO = ID_USUARIO) USUARIO
-                    ,	NOMBRECATEGORIA
-                    ,	FECHACAPTURA
+                        CAT.ID_CATEGORIA
+                    ,	CAT.ID_USUARIO
+                    ,   (SELECT USUARIO FROM USUARIOS WHERE ID_USUARIO = CAT.ID_USUARIO) USUARIO
+                    ,	CAT.NOMBRECATEGORIA
+                    ,	CAT.FECHACAPTURA
                 FROM 
-                    CATEGORIAS
+                    CATEGORIAS CAT
         ";
 
-        $result = $conexion->query($sql);
+        $result  = $conexion->query($sql);
         $cantReg = $result->num_rows;
 
         if($cantReg > 0){
