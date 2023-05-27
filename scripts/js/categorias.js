@@ -17,7 +17,7 @@ var listarCategorias = async () =>{
                             <th>Eliminar</th>
                         </tr>
                     </thead>
-                    <tbody></tbody>
+                    <tbody>
     `;
 
     params = {
@@ -63,6 +63,10 @@ var listarCategorias = async () =>{
                 </tr>
             `;
         }   /**Fin del for */
+
+        contenido += `  </tbody>
+                    </table>
+        `;
 
         document.getElementById("rptCategorias").innerHTML = contenido;
 
@@ -173,7 +177,7 @@ var agregarCategoria = async () =>{
 
     verificarToken();       /**Verificamos si el token no ha expirado, si ha expirado entonces redireccionamos */
 
-    jwt = JSON.parse(localStorage.getItem("jwt"));
+    jwt         = JSON.parse(localStorage.getItem("jwt"));
 
     idUsuario   = jwt.idUsuario;
     usuario     = jwt.usuario;
@@ -323,9 +327,3 @@ var editarCategoria = async (idCategoria) =>{
     }
 }
 
-/**
- * Funcion encargada de regresar al menu principal
- */
-var regresarMenu = () =>{
-    window.location.href = "http://localhost/SistemaVentas/view/dashboard/dashboard.php";
-}

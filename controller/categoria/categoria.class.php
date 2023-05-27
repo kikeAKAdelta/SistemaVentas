@@ -89,8 +89,8 @@ class Categoria{
 
         if($cantReg > 0){
 
-            $resultId = $result->fetch_array(MYSQLI_ASSOC);          /**Retornamos la data en array asociativo */
-            $maxId  = $resultId["MAX_ID"];
+            $resultId   = $result->fetch_array(MYSQLI_ASSOC);          /**Retornamos la data en array asociativo */
+            $maxId      = $resultId["MAX_ID"];
 
             $sql = "INSERT INTO CATEGORIAS
                             (

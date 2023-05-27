@@ -10,8 +10,17 @@ var redirectView = (view) =>{
             window.location.href = 'http://localhost/SistemaVentas/view/categorias/categorias.php';
         }else if(view == 'usuarios'){
             window.location.href = 'http://localhost/SistemaVentas/view/usuarios/usuarios.php';
+        }else if(view == 'inventario'){
+            window.location.href = 'http://localhost/SistemaVentas/view/productos/productos.php';
         }
     }
 
     return;
+}
+
+/**
+ * Funcion encargada de regresar al menu principal
+ */
+var regresarMenu = () =>{
+    window.location.href = "http://localhost/SistemaVentas/view/dashboard/dashboard.php";
 }

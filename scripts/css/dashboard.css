@@ -54,12 +54,16 @@ body{
     color: var(--azul);
 }
 
-.icon-proveedor{
+.icon-inventario{
     color: var(--cafe);
 }
 
 .icon-usuarios{
     color: #727C8C;
+}
+
+.icon-proveedores{
+    color: #ad3939;
 }
 
 

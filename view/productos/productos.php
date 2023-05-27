@@ -10,7 +10,7 @@ date_default_timezone_set('America/Mexico_City');
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
+    <title>Productos</title>
 
     <link href="../../libs/bootstrap5/css/bootstrap.min.css" rel="stylesheet">
     <link href="../../scripts/css/dashboard.css" rel="stylesheet" >
@@ -45,7 +45,7 @@ date_default_timezone_set('America/Mexico_City');
             <div class="row">
                 <div class="col-sm-12">
                     <div class="card p-2 fw-bold">
-                        Categorias
+                        Productos
                     </div>
                 </div>
             </div>
@@ -59,14 +59,12 @@ date_default_timezone_set('America/Mexico_City');
 
                             <div class="row mt-2">
 
-                                <div class="col-sm-3">
+                                <div class="col-sm-6">
                                     <button type="button" class="btn btn-sm btn-danger" onclick="regresarMenu(); return false;">
                                         <i class="fas fa-arrow-circle-left"></i>  Regresar
                                     </button>
-                                </div>
 
-                                <div class="col-sm-3">
-                                    <button type="button" class="btn btn-sm btn-success" onclick="vistaCrearCategoria(); return false;">
+                                    <button type="button" class="btn btn-sm btn-success" onclick="vistaCrearProductos(); return false;">
                                         <i class="fas fa-plus-circle"></i> Agregar
                                     </button>
                                 </div>
@@ -76,7 +74,7 @@ date_default_timezone_set('America/Mexico_City');
                         </div>
 
                         <div class="container-fluid mt-3">
-                            <div id="rptCategorias"></div>
+                            <div id="rptProductos"></div>
                         </div>
 
                     </div>
@@ -89,7 +87,7 @@ date_default_timezone_set('America/Mexico_City');
 </body>
 </html>
 
-<script src="../../scripts/js/categorias.js"></script>
+<script src="../../scripts/js/productos.js"></script>
 
 
 <!-- MODALES -->
@@ -99,7 +97,7 @@ date_default_timezone_set('America/Mexico_City');
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="modal-titulo">Agregar Categoria</h5>
+        <h5 class="modal-title" id="modal-titulo">Agregar Producto</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body" id="modal-content">
