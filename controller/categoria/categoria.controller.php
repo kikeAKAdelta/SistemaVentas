@@ -1,6 +1,7 @@
 <?php
 
 $request = $_SERVER["REQUEST_METHOD"];
+require_once "../../cors/cors.php";
 require_once './categoria.class.php';
 
 if($request == "POST"){

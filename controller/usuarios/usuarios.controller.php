@@ -1,6 +1,8 @@
 <?php
 
+require_once "../../cors/cors.php";
 date_default_timezone_set('America/Mexico_City');
+
 
 $request = $_SERVER["REQUEST_METHOD"];
 require_once './usuarios.class.php';
@@ -23,8 +25,16 @@ if($request == "POST"){
 
             if($listData == -1){
                 $json = ["data" => "-1"];
+
+                header('Content-Type: application/json');                         /**Tipo de Contenido de Respuesta */
+                http_response_code(200);                                          /**Tipo de Respuesta HTTP */
+
                 echo json_encode($json);
             }else{
+
+                header('Content-Type: application/json');                         /**Tipo de Contenido de Respuesta */
+                http_response_code(200);                                          /**Tipo de Respuesta HTTP */
+
                 echo json_encode($listData);
             }
         }else if($funcion == "eliminarUsuario"){
@@ -33,14 +43,26 @@ if($request == "POST"){
 
             $result = $usuario->eliminarUsuario($idUsuario);
 
+            header('Content-Type: application/json');                         /**Tipo de Contenido de Respuesta */
+            http_response_code(200);                                          /**Tipo de Respuesta HTTP */
+
+
             echo json_encode($result);
         }else if($funcion == "obtenerTipoUsuario"){
             $rstTipoUsuario = $usuario->obtenerTipoUsuario();
 
             if($rstTipoUsuario == -1){
                 $responseCode = ["CODIGO"=> 601, "MENSAJE" => "Los tipos de usuario no se pudieron obtener, favor revisar"];
+                
+                header('Content-Type: application/json');                         /**Tipo de Contenido de Respuesta */
+                http_response_code(200);                                          /**Tipo de Respuesta HTTP */
+                
                 echo json_encode($responseCode);
             }else{
+
+                header('Content-Type: application/json');                         /**Tipo de Contenido de Respuesta */
+                http_response_code(200);                                          /**Tipo de Respuesta HTTP */
+
                 echo json_encode($rstTipoUsuario);
             }
         }else if($funcion == "crearUsuario"){
@@ -72,6 +94,9 @@ if($request == "POST"){
                     "MENSAJE" => "Registro agregado correctamente a nivel de sistema"
                 ];
 
+                header('Content-Type: application/json');                         /**Tipo de Contenido de Respuesta */
+                http_response_code(200);                                          /**Tipo de Respuesta HTTP */
+
                 echo json_encode($responseCode);
 
             }else if($result == -1){
@@ -80,6 +105,9 @@ if($request == "POST"){
                     "CODIGO" => 602,
                     "MENSAJE" => "Error, el registro no se logro crear!"
                 ];
+
+                header('Content-Type: application/json');                         /**Tipo de Contenido de Respuesta */
+                http_response_code(500);                                          /**Tipo de Respuesta HTTP */
 
                 echo json_encode($responseCode);
             }
@@ -92,8 +120,16 @@ if($request == "POST"){
 
             if($listData == -1){
                 $json = ["data" => "-1"];
+
+                header('Content-Type: application/json');                         /**Tipo de Contenido de Respuesta */
+                http_response_code(200);                                          /**Tipo de Respuesta HTTP */
+
                 echo json_encode($json);
             }else{
+
+                header('Content-Type: application/json');                         /**Tipo de Contenido de Respuesta */
+                http_response_code(200);                                          /**Tipo de Respuesta HTTP */
+
                 echo json_encode($listData);
             }
         }else if($funcion == "editarUsuario"){
@@ -127,6 +163,9 @@ if($request == "POST"){
                     "MENSAJE" => "Registro editado correctamente a nivel de sistema"
                 ];
 
+                header('Content-Type: application/json');                         /**Tipo de Contenido de Respuesta */
+                http_response_code(200);                                          /**Tipo de Respuesta HTTP */
+
                 echo json_encode($responseCode);
 
             }else if($result == -1){
@@ -136,13 +175,22 @@ if($request == "POST"){
                     "MENSAJE" => "Error, el registro no se logro editar!"
                 ];
 
+                header('Content-Type: application/json');                         /**Tipo de Contenido de Respuesta */
+                http_response_code(200);                                          /**Tipo de Respuesta HTTP */
+
                 echo json_encode($responseCode);
             }
 
+        }else{
+            header('Content-Type: application/json');                         /**Tipo de Contenido de Respuesta */
+            http_response_code(404);                                          /**Tipo de Respuesta HTTP: 404 NOT FOUND: Recurso no encontrado */
         }
-
     }
 
+}else{
+    header('Content-Type: application/json');                         /**Tipo de Contenido de Respuesta */
+    http_response_code(501);                                          /**Tipo de Respuesta HTTP: 404 NOT FOUND: Recurso no encontrado */
+        
 }
 
 

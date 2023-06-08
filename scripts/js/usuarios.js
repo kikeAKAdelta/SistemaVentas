@@ -27,6 +27,7 @@ var listarUsuarios = async () =>{
     params = {
         "funcion": "listarUsuarios"
     }
+   
 
     const data = await fetch("http://localhost/SistemaVentas/controller/usuarios/usuarios.controller.php",
                         {
@@ -34,8 +35,31 @@ var listarUsuarios = async () =>{
                             body: JSON.stringify(params),
                             headers: {"Content-Type": "application/json; charset=UTF-8"}
                         }
-    ).then(result => result.json());
+    ).then(result => {
+        
+        /**Si todo esta correcto, retornamos la Informacion */
+        if(result.status == 200){
 
+            console.log('Retorno codigo ' + result.status);
+
+            return result.json();
+
+        }else{
+
+            /**Si un error distinto del codigo 200, retornamos el codigo de error, si fue error de error etc */
+            responseObj = {
+                responseStatus: result.status
+            }
+
+            return responseObj;
+        }
+    });
+
+    if(data.responseStatus != undefined){
+        alert('Existio un error de comunicación. Código error: ' + data.responseStatus);
+        return;
+    }
+    
     cantidad = Object.keys(data).length;
 
     if(cantidad > 0){
@@ -279,7 +303,25 @@ var agregarUsuario = async () =>{
                 method: "POST",
                 body: JSON.stringify(params),
                 headers: {"Content-Type": "application/json; chartset=UTF-8"}
-    }).then(result => result.json());
+    }).then(result => {
+
+        if(result.status == 200){
+            return result.json();
+        }else{
+
+            /**Si obtenemos un codigo de estado distinto del 200, retornamos el codigo de error */
+            objResponse = {
+                responseStatus: result.status
+            }
+
+            return objResponse;
+        }
+    });
+
+    if(result.responseStatus != undefined){
+        alert('Existio un error de comunicacion. Codigo de error: ' + result.responseStatus);
+        return;
+    }
 
     codigo  = result.CODIGO;
     mensaje = result.MENSAJE;

@@ -1,6 +1,7 @@
 <?php
 
 date_default_timezone_set('America/Mexico_City');
+require_once "../../cors/cors.php";
 require_once './productos.class.php';
 
 $request = $_SERVER['REQUEST_METHOD'];
